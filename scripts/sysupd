@@ -1,0 +1,79 @@
+#!/bin/bash
+#!/bin/bash
+#set -e
+##################################################################################################################
+# Written to be used on 64 bits computers
+# Author 	: 	bojanstrkovski-21
+# Website 	: 	https://github.com/bojanstrkovski-21/boki-hello-2
+##################################################################################################################
+echo
+tput setaf 4
+echo "###############################################################################"
+echo "#                   Boki-Hello System_Update                                  #"
+echo "###############################################################################"
+tput sgr0
+echo
+echo "Select What To Update"
+echo
+echo "########## Packages/Tools ##########"
+echo
+echo "1.  Update Arch/Aur System / Packages"
+echo "2.  Update Flatpak Packages"
+echo
+echo "######## You Ready To Reboot ? ########"
+echo
+echo "3.  Reboot System Now !!!"
+echo
+echo "Type Your Selection..."
+echo
+read CHOICE
+
+case $CHOICE in
+
+    1 )
+      echo
+      echo "##########################################"
+      echo "               System Update             "
+      echo "##########################################"
+			sleep 3
+      yay -Syyu
+			sleep 3
+      echo "#######################################"
+      echo "                 Done !                "
+      echo "#######################################"
+      clear && sh ./scripts/arch
+
+      ;;
+
+    2 )
+      echo
+      echo "##########################################"
+      echo "               Flatpak Packages               "
+      echo "##########################################"
+			sleep 3
+			flatpak update
+			sleep 3
+      echo "#######################################"
+      echo "                 Done !                "
+      echo "#######################################"
+      clear && sh ./scripts/arch
+
+      ;;
+
+    3 )
+      echo
+      echo "########################################"
+      echo "            Rebooting System            "
+      echo "########################################"
+           sleep 3
+           reboot
+      echo
+
+      ;;
+
+    * )
+      echo "#################################"
+      echo "Choose the correct number"
+      echo "#################################"
+      ;;
+esac

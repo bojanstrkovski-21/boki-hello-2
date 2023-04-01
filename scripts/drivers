@@ -1,0 +1,97 @@
+#!/bin/bash
+#!/bin/bash
+#set -e
+##################################################################################################################
+# Written to be used on 64 bits computers
+# Author 	: 	DarkXero
+# Website 	: 	http://xerolinux.github.io
+##################################################################################################################
+echo
+tput setaf 4
+echo "###############################################################################"
+echo "#                         XeroLinux Driver Installer                          #"
+echo "###############################################################################"
+tput sgr0
+echo
+echo "Select Drivers To Install"
+echo
+echo "########## Drivers/Tools ##########"
+echo
+echo "1.  Install Drivers For Ryzen System"
+echo "2.  Install Drivers For Intel System"
+echo "3.  Install Kernels"
+echo
+echo "######## You Ready To Reboot ? ########"
+echo
+echo "4.  Reboot System Now !!!"
+echo
+echo "Type Your Selection..."
+echo
+read CHOICE
+
+case $CHOICE in
+
+    1 )
+      echo
+      echo "##########################################"
+      echo "              Ryzen Drivers               "
+      echo "##########################################"
+			sleep 3
+			sudo pacman -Rdd intel-ucode
+            sudo pacman -S --needed nvidia-dkms-tkg nvidia-utils-tkg nvidia-settings-tkg opencl-nvidia-tkg lib32-nvidia-utils-tkg lib32-opencl-nvidia-tkg
+			sleep 3
+      echo "#######################################"
+      echo "                 Done !                "
+      echo "#######################################"
+      clear && sh ./scripts/drivers
+
+      ;;
+
+    2 )
+      echo
+      echo "##########################################"
+      echo "              Intel Drivers               "
+      echo "##########################################"
+			sleep 3
+			sudo pacman -Rdd amd-ucode
+            sudo pacman -S --needed nvidia-470xx-dkms-tkg nvidia-470xx-utils-tkg nvidia-470xx-settings-tkg opencl-nvidia-470xx-tkg lib32-nvidia-470xx-utils-tkg lib32-opencl-nvidia-470xx-tkg
+			sleep 3
+      echo "#######################################"
+      echo "                 Done !                "
+      echo "#######################################"
+      clear && sh ./scripts/drivers
+
+      ;;
+
+    3 )
+      echo
+      echo "##########################################"
+      echo "                  Kernels                 "
+      echo "##########################################"
+			sleep 3
+			sudo pacman -S linux-tkg linux-tkg-headers
+			sleep 3
+      echo "#######################################"
+      echo "                 Done !                "
+      echo "#######################################"
+      clear && sh ./scripts/drivers
+
+      ;;
+
+    4 )
+      echo
+      echo "########################################"
+      echo "            Rebooting System            "
+      echo "########################################"
+           sleep 3
+           reboot
+      echo
+
+      ;;
+
+    * )
+      echo "#################################"
+      echo "Choose the correct number"
+      echo "#################################"
+      ;;
+esac

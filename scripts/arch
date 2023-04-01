@@ -1,0 +1,79 @@
+#!/bin/bash
+#!/bin/bash
+#set -e
+##################################################################################################################
+# Written to be used on 64 bits computers
+# Author 	: 	DarkXero
+# Website 	: 	http://xerolinux.github.io
+##################################################################################################################
+echo
+tput setaf 4
+echo "###############################################################################"
+echo "#                    XeroLinux Arch/AUR Package Installer                     #"
+echo "###############################################################################"
+tput sgr0
+echo
+echo "Select Packages To Install"
+echo
+echo "########## Packages/Tools ##########"
+echo
+echo "1.  Install My Arch Packages"
+echo "2.  Install My AUR Packages"
+echo
+echo "######## You Ready To Reboot ? ########"
+echo
+echo "3.  Reboot System Now !!!"
+echo
+echo "Type Your Selection..."
+echo
+read CHOICE
+
+case $CHOICE in
+
+    1 )
+      echo
+      echo "##########################################"
+      echo "               Arch Packages              "
+      echo "##########################################"
+			sleep 3
+			sudo pacman -S --needed droidcam spotify-adblock kwave timeshift sublime-text-4 freedownloadmanager hugo ventoy-bin vivaldi vivaldi-ffmpeg-codecs nomachine teamviewer wallpaper-engine-plasma xscreensaver system-monitoring-center bash-pipes cmatrix tty-clock-git wttr caffeine-ng kdenlive simplescreenrecorder yt-dlp solaar wine-meta virt-manager-meta gparted
+			sleep 3
+      echo "#######################################"
+      echo "                 Done !                "
+      echo "#######################################"
+      clear && sh ./scripts/arch
+
+      ;;
+
+    2 )
+      echo
+      echo "##########################################"
+      echo "               AUR Packages               "
+      echo "##########################################"
+			sleep 3
+			yay -S
+			sleep 3
+      echo "#######################################"
+      echo "                 Done !                "
+      echo "#######################################"
+      clear && sh ./scripts/arch
+
+      ;;
+
+    3 )
+      echo
+      echo "########################################"
+      echo "            Rebooting System            "
+      echo "########################################"
+           sleep 3
+           reboot
+      echo
+
+      ;;
+
+    * )
+      echo "#################################"
+      echo "Choose the correct number"
+      echo "#################################"
+      ;;
+esac

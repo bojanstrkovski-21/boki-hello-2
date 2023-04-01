@@ -1,0 +1,15 @@
+#!/bin/bash
+#set -e
+echo "#################################"
+echo "         System Updates          "
+echo "#################################"
+echo
+echo "Checking for System Updates...   "
+echo "#################################"
+echo
+yay -Syyu
+flatpak update
+echo
+echo "#################################"
+echo "      Updating Done! Exit Me     "
+echo "#################################"
