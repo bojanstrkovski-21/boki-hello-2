@@ -3,13 +3,13 @@
 #set -e
 ##################################################################################################################
 # Written to be used on 64 bits computers
-# Author 	: 	bojanstrkovski-21
-# Website 	: 	https://github.com/bojanstrkovski-21/boki-hello-2
+# Author  : bojanstrkovski-21
+# Website : https://github.com/bojanstrkovski-21/boki-hello-2
 ##################################################################################################################
 echo
 tput setaf 4
 echo "###############################################################################"
-echo "#                   Boki-Hello System_Update                                  #"
+echo "#                   Boki-Hello-2 System_Update                                  #"
 echo "###############################################################################"
 tput sgr0
 echo

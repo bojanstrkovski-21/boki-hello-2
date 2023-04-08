@@ -3,13 +3,13 @@
 #set -e
 ##################################################################################################################
 # Written to be used on 64 bits computers
-# Author 	: 	DarkXero
-# Website 	: 	http://xerolinux.github.io
+# Author  :   bojanstrkovski-21
+# Website   :   https://github.com/bojanstrkovski-21/boki-hello-2
 ##################################################################################################################
 echo
 tput setaf 4
 echo "###############################################################################"
-echo "#                         XeroLinux Driver Installer                          #"
+echo "#                         Boki-Hello Driver Installer                          #"
 echo "###############################################################################"
 tput sgr0
 echo
